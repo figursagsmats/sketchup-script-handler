@@ -15,6 +15,8 @@ module ScriptHandler
                 @sem = @dir_path + "/.sem"
                 @pattern = @dir_path + "/**/*.rb"
             end
+            require script_path
+            update_last_modified_time()
             start_scanning()
         end
 
@@ -77,3 +79,4 @@ module ScriptHandler
         ScriptFileWatcher.new(script_path, false)
     end
 end
+
